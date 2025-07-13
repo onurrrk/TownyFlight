@@ -40,7 +40,7 @@ public class PlayerLeaveTownListener implements Listener {
 			if (Settings.flightDisableTimer < 1) {
 				TownyFlightAPI.getInstance().removeFlight(player, false, true, "");
 			} else {
-				Message.of(String.format(Message.getLangString("returnToAllowedArea"), Settings.flightDisableTimer)).serious().to(player);
+				
 				plugin.getScheduler().runLater(player, () -> TownyFlightAPI.getInstance().testForFlight(player, true), Settings.flightDisableTimer * 20);
 			}
 		}
