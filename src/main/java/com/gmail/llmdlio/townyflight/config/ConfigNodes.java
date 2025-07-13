@@ -64,11 +64,7 @@ public enum ConfigNodes {
 			"You cannot use flight while Towny war is active. ",
 			"",
 			"# Message shown when war is active and flight is disallowed."),
-	LANG_RETURNTOALLOWEDAREA(
-			"language.returnToAllowedArea",
-			"You have %s seconds to return to an allowed flight area. ",
-			"",
-			"# Message telling a player to return to an allowed flight area."),
+
 	LANG_NOTOWNFOUND(
 			"language.noTownFound",
 			"TownyFlight cannot find a town by the name %s. ",
@@ -95,7 +91,7 @@ public enum ConfigNodes {
 			"",
 			"# The component shown on towns' status screens when they have free flight enabled."),
 	LANG_STATUSCOMPHOVER(
-			"language.statusScreenComponentHover",
+			"language.statusScrenComponentHover",
 			"Flight enabled for everyone within this town's borders.",
 			"",
 			"# The hover text shown on the free flight status screen component."),
