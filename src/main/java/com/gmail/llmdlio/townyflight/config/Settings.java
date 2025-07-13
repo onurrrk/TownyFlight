@@ -50,7 +50,6 @@ public class Settings {
 		lang.put("noPermission", getString("noPermission"));
 		lang.put("missingNode", getString("missingNode"));
 		lang.put("notDuringWar", getString("notDuringWar"));
-		lang.put("returnToAllowedArea", getString("returnToAllowedArea"));
 		lang.put("noTownFound", getString("noTownFound"));
 		lang.put("townWideFlight", getString("townWideFlight"));
 		lang.put("disabled", getString("disabled"));
