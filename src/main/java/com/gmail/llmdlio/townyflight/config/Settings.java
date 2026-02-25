@@ -82,13 +82,17 @@ public class Settings {
 	}
 
 	private static String colour(String string) {
+
+		if (string == null) {
+			return "";
+		}
 		return ChatColor.translateAlternateColorCodes('&', string);
 	}
 
 	public static List<String> allowedTempFlightAreas() {
 		return config.getStrArr(ConfigNodes.OPTIONS_TEMPFLIGHT_ALLOWED_AREAS);
 	}
-	
+
 	public static boolean isAllowedTempFlightArea(String area) {
 		return allowedTempFlightAreas.contains(area);
 	}
