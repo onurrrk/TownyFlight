@@ -5,7 +5,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
-import me.earthme.luminol.api.entity.EntityTeleportAsyncEvent;
+import org.bukkit.event.player.PlayerTeleportEvent;
 import org.bukkit.event.player.PlayerTeleportEvent.TeleportCause;
 
 import com.gmail.llmdlio.townyflight.TownyFlightAPI;
@@ -14,17 +14,16 @@ import com.palmergames.bukkit.towny.object.Resident;
 
 public class PlayerTeleportListener implements Listener {
 
-	@EventHandler(priority = EventPriority.MONITOR)
-	private void playerTeleports(EntityTeleportAsyncEvent event) {
-		if (!(event.getEntity() instanceof Player player)) return;
+	@EventHandler(priority = EventPriority.MONITOR, ignoreCancelled = true)
+	public void playerTeleports(PlayerTeleportEvent event) {
+		Player player = event.getPlayer();
 
-		if (!aTeleportCauseThatMatters(event.getTeleportCause()))
+		if (!aTeleportCauseThatMatters(event.getCause()))
 			return;
 
-		
-		if (player.hasPermission("townyflight.bypass") 
+		if (player.hasPermission("townyflight.bypass")
 				|| !player.getAllowFlight()
-				|| flightAllowedDestination(player, event.getDestination())) {
+				|| flightAllowedDestination(player, event.getTo())) {
 			return;
 		}
 
@@ -40,5 +39,4 @@ public class PlayerTeleportListener implements Listener {
 		Resident resident = TownyUniverse.getInstance().getResident(player.getUniqueId());
 		return resident != null && TownyFlightAPI.allowedLocation(player, loc, resident);
 	}
-
 }
