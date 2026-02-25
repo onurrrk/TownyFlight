@@ -66,7 +66,7 @@ public class TempFlightTask implements Runnable {
 						warningPlayers.put(uuid, timeLeft);
 					}
 				} else {
-					warningPlayers.put(uuid, 4);
+					warningPlayers.put(uuid, 3);
 					player.sendMessage(formatMessage("&6[Towny] &8[&aTowny Uçuş&8] uçuş bölgesine dönmek için &62 &8saniyeniz var."));
 				}
 			}
